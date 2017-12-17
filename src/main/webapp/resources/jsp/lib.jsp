@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<%--<link rel="stylesheet" href="<c:import url="/resources/css/bootstrap.css"/>" crossorigin="anonymous"/>--%>
-<%--<script src="<c:import url="/resources/js/bootstrap.js"/>" crossorigin="anonymous"></script>--%>
-</html>
+
+<script src="<c:url value="/resources/js/popper.js"/>"></script>
+<script src="<c:url value="/resources/js/jquery-3.2.1.min.js"/>"></script>
+<script src="<c:url value="/resources/js/angular.min.js"/> "></script>
+<script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>"/>
