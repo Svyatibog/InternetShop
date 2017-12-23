@@ -1,8 +1,10 @@
 package com.trofimenko.shop.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -16,15 +18,25 @@ import java.util.Properties;
 @Configuration
 @ComponentScan(value = "com.trofimenko.shop.entities")
 @EnableTransactionManagement
+@PropertySource("classpath:jdbc.properties")
 public class HibernateConfig {
+
+    @Value("${jdbc.driver}")
+    private String driver;
+    @Value("${jdbc.userName}")
+    private String userName;
+    @Value("${jdbc.password}")
+    private String password;
+    @Value("${jdbc.url}")
+    private String url;
 
     @Bean
     public DriverManagerDataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("root");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/shop");
+        dataSource.setDriverClassName(driver);
+        dataSource.setUsername(userName);
+        dataSource.setPassword(password);
+        dataSource.setUrl(url);
         return dataSource;
     }
 
