@@ -2,11 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <c:import url="/resources/jsp/lib.jsp"/>
     <title>Title</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p id="fa"><strong>This line rendered as bold text.</strong></p>
+    <c:import url="/resources/jsp/header.jsp"/>
+    <div class="container">
+        <div class="row">
+            <h1>Home Page</h1>
+        </div>
+    </div>
 </body>
 </html>
